@@ -1,0 +1,53 @@
+<section id="propiedades">
+  <div class="props-header reveal">
+    <div>
+      <div class="section-tag">{{ i18n.t('props.tag') }}</div>
+      <h2 [innerHTML]="i18n.t('props.title')"></h2>
+    </div>
+    <a href="#contacto" class="btn-outline">{{ i18n.t('props.all') }}</a>
+  </div>
+  <div class="props-grid reveal">
+    <div class="prop-card">
+      <div class="prop-img prop-img-1">
+        🏙️<span class="prop-tag">{{ i18n.t('prop1.type') }}</span>
+      </div>
+      <div class="prop-info">
+        <h3>Torres del Parque</h3>
+        <p class="prop-location">📍 {{ i18n.t('prop1.loc') }}</p>
+        <div class="prop-meta">
+          <div><strong>240</strong><span>{{ i18n.t('units') }}</span></div>
+          <div><strong>3</strong><span>{{ i18n.t('towers') }}</span></div>
+          <div><strong>8 {{ i18n.t('yrs') }}</strong><span>{{ i18n.t('with.nexum') }}</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img prop-img-2">
+        🏘️<span class="prop-tag">{{ i18n.t('prop2.type') }}</span>
+      </div>
+      <div class="prop-info">
+        <h3>Residencias Mirador</h3>
+        <p class="prop-location">📍 {{ i18n.t('prop2.loc') }}</p>
+        <div class="prop-meta">
+          <div><strong>180</strong><span>{{ i18n.t('units') }}</span></div>
+          <div><strong>2</strong><span>{{ i18n.t('buildings') }}</span></div>
+          <div><strong>5 {{ i18n.t('yrs') }}</strong><span>{{ i18n.t('with.nexum') }}</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img prop-img-3">
+        🏛️<span class="prop-tag">{{ i18n.t('prop3.type') }}</span>
+      </div>
+      <div class="prop-info">
+        <h3>Condominio Altamira</h3>
+        <p class="prop-location">📍 {{ i18n.t('prop3.loc') }}</p>
+        <div class="prop-meta">
+          <div><strong>96</strong><span>{{ i18n.t('units') }}</span></div>
+          <div><strong>1</strong><span>{{ i18n.t('tower') }}</span></div>
+          <div><strong>12 {{ i18n.t('yrs') }}</strong><span>{{ i18n.t('with.nexum') }}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

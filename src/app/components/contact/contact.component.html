@@ -1,0 +1,76 @@
+<section id="contacto">
+  <div class="contact-info reveal">
+    <div class="section-tag">{{ i18n.t('contact.tag') }}</div>
+    <h2>{{ i18n.t('contact.title') }}</h2>
+    <p class="section-sub">{{ i18n.t('contact.sub') }}</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-item-text">
+          <p>{{ i18n.t('contact.phone.label') }}</p>
+          <p>+1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-item-text">
+          <p>{{ i18n.t('contact.email.label') }}</p>
+          <p>{{ email }}</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <p>{{ i18n.t('contact.office.label') }}</p>
+          <p>123 Main Street, Suite 400</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reveal">
+    @if (state() === 'success') {
+      <div class="form-success">
+        <div class="form-success-icon">✓</div>
+        <p class="form-success-title">{{ i18n.t('form.success.title') }}</p>
+        <p class="form-success-sub">{{ i18n.t('form.success.sub') }}</p>
+        <button class="btn-outline form-success-back" (click)="state.set('idle')">{{ i18n.t('form.another') }}</button>
+      </div>
+    } @else {
+      <form class="contact-form" (submit)="onSubmit($event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>{{ i18n.t('form.name') }}</label>
+            <input type="text" [placeholder]="i18n.t('form.name.ph')" />
+          </div>
+          <div class="form-group">
+            <label>{{ i18n.t('form.email') }}</label>
+            <input type="email" placeholder="email@example.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{ i18n.t('form.condo') }}</label>
+          <input type="text" [placeholder]="i18n.t('form.condo.ph')" />
+        </div>
+        <div class="form-group">
+          <label>{{ i18n.t('form.service') }}</label>
+          <select>
+            <option value="">{{ i18n.t('form.select') }}</option>
+            <option>{{ i18n.t('s1.title') }}</option>
+            <option>{{ i18n.t('s2.title') }}</option>
+            <option>{{ i18n.t('s3.title') }}</option>
+            <option>{{ i18n.t('s4.title') }}</option>
+            <option>{{ i18n.t('s5.title') }}</option>
+            <option>{{ i18n.t('s6.title') }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>{{ i18n.t('form.message') }}</label>
+          <textarea [placeholder]="i18n.t('form.msg.ph')"></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-submit" [disabled]="state() === 'loading'">
+          {{ state() === 'loading' ? i18n.t('form.sending') : i18n.t('form.submit') }}
+        </button>
+      </form>
+    }
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<nav>
+  <div class="logo">
+    <span class="logo-dot"></span>Nexum
+    <span class="logo-sub">Property Services</span>
+  </div>
+  <button class="menu-btn" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Toggle menu">
+    <span class="menu-btn-bar" [class.bar-open-1]="menuOpen()"></span>
+    <span class="menu-btn-bar" [class.bar-open-2]="menuOpen()"></span>
+    <span class="menu-btn-bar" [class.bar-open-3]="menuOpen()"></span>
+  </button>
+  <ul [class.open]="menuOpen()">
+    <li><a href="#servicios" (click)="closeMenu()">{{ i18n.t('nav.services') }}</a></li>
+    <li><a href="#nosotros" (click)="closeMenu()">{{ i18n.t('nav.about') }}</a></li>
+    <li><a href="#propiedades" (click)="closeMenu()">{{ i18n.t('nav.properties') }}</a></li>
+    <li><a href="#testimonios" (click)="closeMenu()">{{ i18n.t('nav.testimonials') }}</a></li>
+    <li><a href="#contacto" class="nav-cta" (click)="closeMenu()">{{ i18n.t('nav.contact') }}</a></li>
+    <li>
+      <div class="lang-toggle">
+        <button class="lang-btn" [class.active]="i18n.lang() === 'es'" (click)="i18n.setLang('es')">ES</button>
+        <button class="lang-btn" [class.active]="i18n.lang() === 'en'" (click)="i18n.setLang('en')">EN</button>
+      </div>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,27 @@
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">{{ i18n.t('hero.tag') }}</div>
+    <h1 [innerHTML]="i18n.t('hero.title')"></h1>
+    <p class="hero-sub">{{ i18n.t('hero.sub') }}</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">{{ i18n.t('hero.cta1') }}</a>
+      <a href="#servicios" class="btn-outline-light">{{ i18n.t('hero.cta2') }}</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">120+</div>
+      <div class="stat-label">{{ i18n.t('hero.stat1') }}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">15</div>
+      <div class="stat-label">{{ i18n.t('hero.stat2') }}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">{{ i18n.t('hero.stat3') }}</div>
+    </div>
+  </div>
+</section>

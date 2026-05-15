@@ -1,0 +1,39 @@
+<section id="nosotros">
+  <div class="about-visual reveal">
+    <div class="about-img-placeholder">
+      <span class="about-building">🏢</span>
+    </div>
+    <div class="about-badge">
+      <div class="about-badge-num">15+</div>
+      <div class="about-badge-label" [innerHTML]="i18n.t('about.badge')"></div>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="section-tag">{{ i18n.t('about.tag') }}</div>
+    <h2 [innerHTML]="i18n.t('about.title')"></h2>
+    <p class="section-sub">{{ i18n.t('about.sub') }}</p>
+    <div class="about-list">
+      <div class="about-item">
+        <span class="about-item-icon">◆</span>
+        <div class="about-item-text">
+          <h4>{{ i18n.t('about.v1.title') }}</h4>
+          <p>{{ i18n.t('about.v1.desc') }}</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <span class="about-item-icon">◆</span>
+        <div class="about-item-text">
+          <h4>{{ i18n.t('about.v2.title') }}</h4>
+          <p>{{ i18n.t('about.v2.desc') }}</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <span class="about-item-icon">◆</span>
+        <div class="about-item-text">
+          <h4>{{ i18n.t('about.v3.title') }}</h4>
+          <p>{{ i18n.t('about.v3.desc') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
