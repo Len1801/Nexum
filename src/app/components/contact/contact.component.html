@@ -36,24 +36,24 @@
         <button class="btn-outline form-success-back" (click)="state.set('idle')">{{ i18n.t('form.another') }}</button>
       </div>
     } @else {
-      <form class="contact-form" (submit)="onSubmit($event)">
+      <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-row">
           <div class="form-group">
             <label>{{ i18n.t('form.name') }}</label>
-            <input type="text" [placeholder]="i18n.t('form.name.ph')" />
+            <input type="text" formControlName="name" [placeholder]="i18n.t('form.name.ph')" />
           </div>
           <div class="form-group">
             <label>{{ i18n.t('form.email') }}</label>
-            <input type="email" placeholder="email@example.com" />
+            <input type="email" formControlName="email" placeholder="email@example.com" />
           </div>
         </div>
         <div class="form-group">
           <label>{{ i18n.t('form.condo') }}</label>
-          <input type="text" [placeholder]="i18n.t('form.condo.ph')" />
+          <input type="text" formControlName="condo" [placeholder]="i18n.t('form.condo.ph')" />
         </div>
         <div class="form-group">
           <label>{{ i18n.t('form.service') }}</label>
-          <select>
+          <select formControlName="service">
             <option value="">{{ i18n.t('form.select') }}</option>
             <option>{{ i18n.t('s1.title') }}</option>
             <option>{{ i18n.t('s2.title') }}</option>
@@ -65,7 +65,7 @@
         </div>
         <div class="form-group">
           <label>{{ i18n.t('form.message') }}</label>
-          <textarea [placeholder]="i18n.t('form.msg.ph')"></textarea>
+          <textarea formControlName="message" [placeholder]="i18n.t('form.msg.ph')"></textarea>
         </div>
         <button type="submit" class="btn-primary btn-submit" [disabled]="state() === 'loading'">
           {{ state() === 'loading' ? i18n.t('form.sending') : i18n.t('form.submit') }}
