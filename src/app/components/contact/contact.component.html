@@ -39,15 +39,15 @@
       <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-row">
           <div class="form-group">
-            <label>{{ i18n.t('form.name') }}</label>
-            <input type="text" formControlName="name" [placeholder]="i18n.t('form.name.ph')" [attr.aria-invalid]="form.controls.name.invalid && form.controls.name.touched" />
+            <label for="contact-name">{{ i18n.t('form.name') }}</label>
+            <input id="contact-name" type="text" formControlName="name" [placeholder]="i18n.t('form.name.ph')" [attr.aria-invalid]="form.controls.name.invalid && form.controls.name.touched" />
             @if (form.controls.name.invalid && form.controls.name.touched) {
               <p class="form-error">{{ i18n.t('form.error.required') }}</p>
             }
           </div>
           <div class="form-group">
-            <label>{{ i18n.t('form.email') }}</label>
-            <input type="email" formControlName="email" placeholder="email@example.com" [attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched" />
+            <label for="contact-email">{{ i18n.t('form.email') }}</label>
+            <input id="contact-email" type="email" formControlName="email" placeholder="email@example.com" [attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched" />
             @if (form.controls.email.touched && form.controls.email.hasError('required')) {
               <p class="form-error">{{ i18n.t('form.error.required') }}</p>
             } @else if (form.controls.email.touched && form.controls.email.hasError('email')) {
@@ -56,15 +56,15 @@
           </div>
         </div>
         <div class="form-group">
-          <label>{{ i18n.t('form.condo') }}</label>
-          <input type="text" formControlName="condo" [placeholder]="i18n.t('form.condo.ph')" [attr.aria-invalid]="form.controls.condo.invalid && form.controls.condo.touched" />
+          <label for="contact-condo">{{ i18n.t('form.condo') }}</label>
+          <input id="contact-condo" type="text" formControlName="condo" [placeholder]="i18n.t('form.condo.ph')" [attr.aria-invalid]="form.controls.condo.invalid && form.controls.condo.touched" />
           @if (form.controls.condo.invalid && form.controls.condo.touched) {
             <p class="form-error">{{ i18n.t('form.error.required') }}</p>
           }
         </div>
         <div class="form-group">
-          <label>{{ i18n.t('form.service') }}</label>
-          <select formControlName="service" [attr.aria-invalid]="form.controls.service.invalid && form.controls.service.touched">
+          <label for="contact-service">{{ i18n.t('form.service') }}</label>
+          <select id="contact-service" formControlName="service" [attr.aria-invalid]="form.controls.service.invalid && form.controls.service.touched">
             <option value="">{{ i18n.t('form.select') }}</option>
             <option>{{ i18n.t('s1.title') }}</option>
             <option>{{ i18n.t('s2.title') }}</option>
@@ -78,8 +78,8 @@
           }
         </div>
         <div class="form-group">
-          <label>{{ i18n.t('form.message') }}</label>
-          <textarea formControlName="message" [placeholder]="i18n.t('form.msg.ph')" [attr.aria-invalid]="form.controls.message.invalid && form.controls.message.touched"></textarea>
+          <label for="contact-message">{{ i18n.t('form.message') }}</label>
+          <textarea id="contact-message" formControlName="message" [placeholder]="i18n.t('form.msg.ph')" [attr.aria-invalid]="form.controls.message.invalid && form.controls.message.touched"></textarea>
           @if (form.controls.message.invalid && form.controls.message.touched) {
             <p class="form-error">{{ i18n.t('form.error.required') }}</p>
           }

@@ -16,11 +16,12 @@ Se podía enviar vacío y ver "¡Mensaje enviado!" igual.
 - [x] Hecho — `Validators.required` en todos los campos, `Validators.email` en email. `onSubmit()` bloquea el envío y marca los campos con `markAllAsTouched()` si el form es inválido. Errores bilingües (`form.error.required`/`form.error.email`) mostrados bajo cada campo, con `aria-invalid` y estilo de borde/rojo en `styles.css`. Archivos: `contact.component.ts`, `contact.component.html`, `i18n.service.ts`, `styles.css`.
 - Tests agregados en `contact.component.spec.ts` (envío vacío bloqueado, email inválido rechazado). `ng test --watch=false --browsers=ChromeHeadless` (CHROME_BIN → Edge): **7/7 SUCCESS**. `ng build` sin errores.
 
-## Paso 3 — Labels del formulario no asociados a sus inputs
+## Paso 3 — Labels del formulario no asociados a sus inputs ✅
 
 Falta `for`/`id`, rompe accesibilidad con lectores de pantalla.
 
-- [ ] Pendiente — Archivo: `contact.component.html:41-68`
+- [x] Hecho — cada `<label>` tiene `for` apuntando al `id` de su input/select/textarea (`contact-name`, `contact-email`, `contact-condo`, `contact-service`, `contact-message`). Archivo: `contact.component.html`.
+- `ng test --watch=false --browsers=ChromeHeadless`: **7/7 SUCCESS**. `ng build` sin errores.
 
 ## Paso 4 — Datos placeholder en el formulario de contacto
 
