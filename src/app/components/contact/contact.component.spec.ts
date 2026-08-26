@@ -42,4 +42,27 @@ describe('ContactComponent', () => {
     expect(component.state()).toBe('success');
     expect(component.form.value.email).toBe('juan@example.com');
   }));
+
+  it('blocks submission and flags invalid fields when the form is empty', () => {
+    component.onSubmit();
+
+    expect(component.state()).toBe('idle');
+    expect(component.form.controls.name.touched).toBe(true);
+    expect(component.form.controls.email.touched).toBe(true);
+  });
+
+  it('rejects a malformed email address', () => {
+    component.form.setValue({
+      name: 'Juan Pérez',
+      email: 'not-an-email',
+      condo: 'Torres del Sol',
+      service: 'Administración General',
+      message: 'Necesitamos una cotización.',
+    });
+
+    component.onSubmit();
+
+    expect(component.state()).toBe('idle');
+    expect(component.form.controls.email.hasError('email')).toBe(true);
+  });
 });

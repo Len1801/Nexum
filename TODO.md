@@ -9,11 +9,12 @@ Migrado a `ReactiveFormsModule` — `contact.component.ts` arma un `FormGroup` (
 - [x] Hecho — `src/app/components/contact/contact.component.ts`, `contact.component.html`
 - **Pendiente dentro de este paso**: sigue sin backend real — `onSubmit()` solo hace `console.log(payload)` + `setTimeout` simulado. Conectar a un servicio de email/API real queda como paso aparte cuando toque.
 
-## Paso 2 — Sin validación en el formulario
+## Paso 2 — Sin validación en el formulario ✅
 
-Se puede enviar vacío y ver "¡Mensaje enviado!" igual.
+Se podía enviar vacío y ver "¡Mensaje enviado!" igual.
 
-- [ ] Pendiente — Fix: `Validators.required`, `Validators.email`, mostrar errores. Archivo: `contact.component.ts`/`.html`
+- [x] Hecho — `Validators.required` en todos los campos, `Validators.email` en email. `onSubmit()` bloquea el envío y marca los campos con `markAllAsTouched()` si el form es inválido. Errores bilingües (`form.error.required`/`form.error.email`) mostrados bajo cada campo, con `aria-invalid` y estilo de borde/rojo en `styles.css`. Archivos: `contact.component.ts`, `contact.component.html`, `i18n.service.ts`, `styles.css`.
+- Tests agregados en `contact.component.spec.ts` (envío vacío bloqueado, email inválido rechazado). `ng test --watch=false --browsers=ChromeHeadless` (CHROME_BIN → Edge): **7/7 SUCCESS**. `ng build` sin errores.
 
 ## Paso 3 — Labels del formulario no asociados a sus inputs
 

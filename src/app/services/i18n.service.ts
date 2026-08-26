@@ -87,6 +87,8 @@ const translations: Record<string, Record<string, string>> = {
     'form.success.title': '¡Mensaje enviado!',
     'form.success.sub': 'Nos pondremos en contacto pronto.',
     'form.another': 'Enviar otro →',
+    'form.error.required': 'Este campo es obligatorio.',
+    'form.error.email': 'Ingrese un correo electrónico válido.',
   },
   en: {
     'nav.services': 'Services',
@@ -174,6 +176,8 @@ const translations: Record<string, Record<string, string>> = {
     'form.success.title': 'Message sent!',
     'form.success.sub': "We'll be in touch soon.",
     'form.another': 'Send another →',
+    'form.error.required': 'This field is required.',
+    'form.error.email': 'Enter a valid email address.',
   },
 };
 
