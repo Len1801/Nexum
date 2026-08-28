@@ -29,11 +29,12 @@ Teléfono `+1 (555) 123-4567` y dirección `123 Main Street, Suite 400` son fict
 
 - [ ] Pendiente — reemplazar por los datos reales del negocio. Archivo: `contact.component.html:11,25`
 
-## Paso 5 — Links muertos en el footer
+## Paso 5 — Links muertos en el footer ✅
 
 "Privacidad" / "Términos" apuntan a `href="#"` (páginas inexistentes).
 
-- [ ] Pendiente — crear las páginas o quitar los links. Archivo: `footer.component.html:7-8`
+- [x] Hecho — se quitaron ambos links del footer (no hay contenido legal real todavía para publicar páginas). También se eliminaron las claves `footer.privacy`/`footer.terms` de `i18n.service.ts` por quedar sin uso. Archivos: `footer.component.html`, `i18n.service.ts`.
+- `ng build` sin errores.
 
 ## Paso 6 — Sin archivos de test en todo el proyecto ✅
 
