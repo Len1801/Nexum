@@ -55,11 +55,11 @@ Usado en varios templates (hero, about, services, props titles). Seguro hoy porq
 
 - [ ] Pendiente — confirmar con el negocio si es intencional y unificar.
 
-## Paso 9 — SEO: meta tags
+## Paso 9 — SEO: meta tags ✅
 
 Falta `meta description` y Open Graph/Twitter cards en `src/index.html`.
 
-- [ ] Pendiente
+- [x] Hecho — agregados `meta description`, Open Graph (`og:type`, `og:site_name`, `og:title`, `og:description`, `og:locale`) y Twitter card (`summary`) en `src/index.html`. Sin `og:image`/`og:url` todavía: no hay foto real (Paso 13) ni dominio de producción confirmado — sumar cuando existan. `ng build` sin errores.
 
 ## Paso 10 — SEO: robots.txt y sitemap.xml
 
