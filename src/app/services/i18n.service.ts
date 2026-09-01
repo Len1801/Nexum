@@ -8,7 +8,7 @@ const translations: Record<string, Record<string, string>> = {
     'nav.testimonials': 'Testimonios',
     'nav.contact': 'Contacto',
     'hero.tag': 'Administración Profesional de Condominios',
-    'hero.title': 'Gestión que<br><em>transforma</em><br>comunidades',
+    'hero.title': 'Gestión que\ntransforma\ncomunidades',
     'hero.sub': 'Nexum Property Services ofrece administración integral de condominios con transparencia, tecnología y un equipo dedicado a elevar la calidad de vida de cada residente.',
     'hero.cta1': 'Solicitar Cotización',
     'hero.cta2': 'Ver Servicios',
@@ -16,7 +16,7 @@ const translations: Record<string, Record<string, string>> = {
     'hero.stat2': 'Años de experiencia',
     'hero.stat3': 'Satisfacción',
     'services.tag': 'Lo que ofrecemos',
-    'services.title': 'Servicios<br>especializados',
+    'services.title': 'Servicios\nespecializados',
     'services.sub': 'Soluciones completas para la administración eficiente y transparente de su comunidad residencial.',
     's1.title': 'Administración General',
     's1.desc': 'Gestión integral de áreas comunes, personal, proveedores y documentación legal del condominio.',
@@ -31,9 +31,9 @@ const translations: Record<string, Record<string, string>> = {
     's6.title': 'Asesoría Legal',
     's6.desc': 'Soporte jurídico en reglamentos, asambleas, contratos y resolución de conflictos entre residentes.',
     'about.tag': 'Quiénes somos',
-    'about.title': 'Compromiso con cada<br>comunidad',
+    'about.title': 'Compromiso con cada\ncomunidad',
     'about.sub': 'En Nexum creemos que un condominio bien administrado es la base de una comunidad que prospera. Combinamos experiencia, tecnología y servicio humano para lograrlo.',
-    'about.badge': 'Años de<br>experiencia',
+    'about.badge': 'Años de\nexperiencia',
     'about.v1.title': 'Transparencia total',
     'about.v1.desc': 'Reportes financieros claros y accesibles para todos los propietarios en tiempo real.',
     'about.v2.title': 'Equipo certificado',
@@ -41,7 +41,7 @@ const translations: Record<string, Record<string, string>> = {
     'about.v3.title': 'Respuesta inmediata',
     'about.v3.desc': 'Canal de atención 24/7 para emergencias y soporte continuo a residentes y directivas.',
     'props.tag': 'Nuestros proyectos',
-    'props.title': 'Propiedades<br>que gestionamos',
+    'props.title': 'Propiedades\nque gestionamos',
     'props.all': 'Ver todos →',
     'prop1.type': 'Residencial',
     'prop1.loc': 'Zona Norte, Ciudad',
@@ -95,7 +95,7 @@ const translations: Record<string, Record<string, string>> = {
     'nav.testimonials': 'Testimonials',
     'nav.contact': 'Contact',
     'hero.tag': 'Professional Condominium Management',
-    'hero.title': 'Management that<br><em>transforms</em><br>communities',
+    'hero.title': 'Management that\ntransforms\ncommunities',
     'hero.sub': 'Nexum Property Services offers comprehensive condominium management with transparency, technology, and a dedicated team committed to elevating the quality of life for every resident.',
     'hero.cta1': 'Request a Quote',
     'hero.cta2': 'View Services',
@@ -103,7 +103,7 @@ const translations: Record<string, Record<string, string>> = {
     'hero.stat2': 'Years of experience',
     'hero.stat3': 'Satisfaction',
     'services.tag': 'What we offer',
-    'services.title': 'Specialized<br>services',
+    'services.title': 'Specialized\nservices',
     'services.sub': 'Complete solutions for the efficient and transparent management of your residential community.',
     's1.title': 'General Management',
     's1.desc': 'Comprehensive management of common areas, staff, suppliers, and legal documentation for the condominium.',
@@ -118,9 +118,9 @@ const translations: Record<string, Record<string, string>> = {
     's6.title': 'Legal Advisory',
     's6.desc': 'Legal support for regulations, assemblies, contracts, and conflict resolution among residents.',
     'about.tag': 'Who we are',
-    'about.title': 'Committed to every<br>community',
+    'about.title': 'Committed to every\ncommunity',
     'about.sub': 'At Nexum we believe a well-managed condominium is the foundation of a thriving community. We combine experience, technology, and human service to achieve it.',
-    'about.badge': 'Years of<br>experience',
+    'about.badge': 'Years of\nexperience',
     'about.v1.title': 'Full transparency',
     'about.v1.desc': 'Clear financial reports accessible to all owners in real time.',
     'about.v2.title': 'Certified team',
@@ -128,7 +128,7 @@ const translations: Record<string, Record<string, string>> = {
     'about.v3.title': 'Immediate response',
     'about.v3.desc': '24/7 support channel for emergencies and ongoing support for residents and boards.',
     'props.tag': 'Our projects',
-    'props.title': 'Properties<br>we manage',
+    'props.title': 'Properties\nwe manage',
     'props.all': 'View all →',
     'prop1.type': 'Residential',
     'prop1.loc': 'North Zone, City',
@@ -193,5 +193,9 @@ export class I18nService {
 
   t(key: string): string {
     return translations[this._lang()][key] ?? key;
+  }
+
+  tLines(key: string): string[] {
+    return this.t(key).split('\n');
   }
 }

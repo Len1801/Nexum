@@ -43,11 +43,12 @@ Había Karma/Jasmine instalado y `"test": "ng test"` en `package.json` pero cero
 - [x] Hecho — agregados `i18n.service.spec.ts` (3 tests) y `contact.component.spec.ts` (2 tests, incluye verificación de que el formulario captura los valores). `ng test --watch=false --browsers=ChromeHeadless` (CHROME_BIN → Edge): **5/5 SUCCESS**.
 - **Pendiente dentro de este paso**: falta cobertura para el resto de componentes (navbar, hero, services, about, properties, testimonials, footer) — se puede ir sumando de a poco.
 
-## Paso 7 — `[innerHTML]` con contenido de i18n
+## Paso 7 — `[innerHTML]` con contenido de i18n ✅
 
-Usado en varios templates (hero, about, services, props titles). Seguro hoy porque son constantes hardcodeadas en `i18n.service.ts`, pero sería vector de XSS si esas traducciones llegan a venir de un CMS/API externa algún día.
+Usado en varios templates (hero, about, services, props titles). Seguro hoy porque eran constantes hardcodeadas en `i18n.service.ts`, pero sería vector de XSS si esas traducciones llegaran a venir de un CMS/API externa algún día.
 
-- [ ] Pendiente — decidir si vale la pena mitigar ahora o solo dejarlo documentado.
+- [x] Hecho — se eliminó `[innerHTML]` de los 5 usos (`hero.title`, `services.title`, `props.title`, `about.title`, `about.badge`). Los `<br>`/`<em>` embebidos en los strings de traducción se reemplazaron por `\n` como separador; `I18nService.tLines(key)` (nuevo método) parte el string en líneas, y los templates las renderizan con `@for` + interpolación (`{{ }}`, auto-escapada) más `<br>`/`<em>` como markup estático del template (no de los datos). Así el contenido de i18n nunca vuelve a pasar por `innerHTML`, sin importar de dónde venga en el futuro. Archivos: `i18n.service.ts`, `hero.component.html`, `services.component.html`, `properties.component.html`, `about.component.html`.
+- `ng build` sin errores. `ng test --watch=false --browsers=ChromeHeadless` (CHROME_BIN → Edge): **7/7 SUCCESS**.
 
 ## Paso 8 — Inconsistencia de copy
 

@@ -5,12 +5,22 @@
     </div>
     <div class="about-badge">
       <div class="about-badge-num">15+</div>
-      <div class="about-badge-label" [innerHTML]="i18n.t('about.badge')"></div>
+      <div class="about-badge-label">
+        @for (line of i18n.tLines('about.badge'); track $index) {
+          {{ line }}
+          @if (!$last) {<br>}
+        }
+      </div>
     </div>
   </div>
   <div class="reveal">
     <div class="section-tag">{{ i18n.t('about.tag') }}</div>
-    <h2 [innerHTML]="i18n.t('about.title')"></h2>
+    <h2>
+      @for (line of i18n.tLines('about.title'); track $index) {
+        {{ line }}
+        @if (!$last) {<br>}
+      }
+    </h2>
     <p class="section-sub">{{ i18n.t('about.sub') }}</p>
     <div class="about-list">
       <div class="about-item">

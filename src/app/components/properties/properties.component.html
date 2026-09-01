@@ -2,7 +2,12 @@
   <div class="props-header reveal">
     <div>
       <div class="section-tag">{{ i18n.t('props.tag') }}</div>
-      <h2 [innerHTML]="i18n.t('props.title')"></h2>
+      <h2>
+        @for (line of i18n.tLines('props.title'); track $index) {
+          {{ line }}
+          @if (!$last) {<br>}
+        }
+      </h2>
     </div>
     <a href="#contacto" class="btn-outline">{{ i18n.t('props.all') }}</a>
   </div>
