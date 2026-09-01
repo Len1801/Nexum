@@ -62,9 +62,10 @@ Falta `meta description` y Open Graph/Twitter cards en `src/index.html`.
 
 - [x] Hecho — agregados `meta description`, Open Graph (`og:type`, `og:site_name`, `og:title`, `og:description`, `og:locale`) y Twitter card (`summary`) en `src/index.html`. Sin `og:image`/`og:url` todavía: no hay foto real (Paso 13) ni dominio de producción confirmado — sumar cuando existan. `ng build` sin errores.
 
-## Paso 10 — SEO: robots.txt y sitemap.xml
+## Paso 10 — SEO: robots.txt y sitemap.xml ✅
 
-- [ ] Pendiente
+- [x] Hecho — `src/robots.txt` (permite todo, referencia al sitemap) y `src/sitemap.xml` (una sola URL, es SPA sin rutas) agregados y registrados en `angular.json` (`assets`) para que se copien a la raíz del build. Archivos: `robots.txt`, `sitemap.xml`, `angular.json`.
+- **Pendiente dentro de este paso**: usan `https://www.nexumproperty.com` como dominio placeholder (no hay dominio de producción confirmado, igual que en Paso 9) — reemplazar cuando se confirme. `ng build` sin errores, ambos archivos verificados en `dist/nexum-web/browser/`.
 
 ## Paso 11 — SEO: datos estructurados JSON-LD
 
