@@ -50,11 +50,11 @@ Usado en varios templates (hero, about, services, props titles). Seguro hoy porq
 - [x] Hecho — se eliminó `[innerHTML]` de los 5 usos (`hero.title`, `services.title`, `props.title`, `about.title`, `about.badge`). Los `<br>`/`<em>` embebidos en los strings de traducción se reemplazaron por `\n` como separador; `I18nService.tLines(key)` (nuevo método) parte el string en líneas, y los templates las renderizan con `@for` + interpolación (`{{ }}`, auto-escapada) más `<br>`/`<em>` como markup estático del template (no de los datos). Así el contenido de i18n nunca vuelve a pasar por `innerHTML`, sin importar de dónde venga en el futuro. Archivos: `i18n.service.ts`, `hero.component.html`, `services.component.html`, `properties.component.html`, `about.component.html`.
 - `ng build` sin errores. `ng test --watch=false --browsers=ChromeHeadless` (CHROME_BIN → Edge): **7/7 SUCCESS**.
 
-## Paso 8 — Inconsistencia de copy
+## Paso 8 — Inconsistencia de copy ✅
 
 `about.badge` dice "15+" pero `hero.stat2` dice "15".
 
-- [ ] Pendiente — confirmar con el negocio si es intencional y unificar.
+- [x] Hecho — confirmado con el negocio: "15+" es el valor correcto. Unificado en `hero.component.html` (`stat-num` ahora dice "15+", igual que `about-badge-num`). `ng build` sin errores.
 
 ## Paso 9 — SEO: meta tags ✅
 
