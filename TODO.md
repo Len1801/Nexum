@@ -67,11 +67,12 @@ Falta `meta description` y Open Graph/Twitter cards en `src/index.html`.
 - [x] Hecho — `src/robots.txt` (permite todo, referencia al sitemap) y `src/sitemap.xml` (una sola URL, es SPA sin rutas) agregados y registrados en `angular.json` (`assets`) para que se copien a la raíz del build. Archivos: `robots.txt`, `sitemap.xml`, `angular.json`.
 - **Pendiente dentro de este paso**: usan `https://www.nexumproperty.com` como dominio placeholder (no hay dominio de producción confirmado, igual que en Paso 9) — reemplazar cuando se confirme. `ng build` sin errores, ambos archivos verificados en `dist/nexum-web/browser/`.
 
-## Paso 11 — SEO: datos estructurados JSON-LD
+## Paso 11 — SEO: datos estructurados JSON-LD ✅
 
 Sin `RealEstateAgent`/`LocalBusiness` schema.
 
-- [ ] Pendiente
+- [x] Hecho — agregado `<script type="application/ld+json">` con schema `RealEstateAgent` (name, description, email, telephone, address, areaServed, priceRange, makesOffer con los 6 servicios) en `src/index.html`.
+- **Pendiente dentro de este paso**: usa los mismos placeholders del Paso 4 (`telephone`, `address`) — actualizar ahí cuando se confirmen los datos reales. Sin `url`/`image`/`logo` todavía por lo mismo que Paso 9/13 (sin dominio confirmado ni foto real). `ng build` sin errores.
 
 ## Paso 12 — SSR/prerender
 
