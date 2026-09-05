@@ -1,4 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ServicesComponent } from './components/services/services.component';
@@ -25,7 +26,13 @@ import { FooterComponent } from './components/footer/footer.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements AfterViewInit {
+  private platformId = inject(PLATFORM_ID);
+  private document = inject(DOCUMENT);
+
   ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e, i) => {
@@ -37,6 +44,6 @@ export class AppComponent implements AfterViewInit {
       },
       { threshold: 0.12 }
     );
-    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+    this.document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
   }
 }

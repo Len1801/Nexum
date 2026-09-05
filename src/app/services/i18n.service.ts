@@ -1,4 +1,5 @@
-import { Injectable, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Injectable, inject, signal } from '@angular/core';
 
 const translations: Record<string, Record<string, string>> = {
   es: {
@@ -179,16 +180,17 @@ const translations: Record<string, Record<string, string>> = {
 
 @Injectable({ providedIn: 'root' })
 export class I18nService {
+  private document = inject(DOCUMENT);
   private _lang = signal<'es' | 'en'>('es');
   lang = this._lang.asReadonly();
 
   constructor() {
-    document.documentElement.lang = 'es';
+    this.document.documentElement.lang = 'es';
   }
 
   setLang(l: 'es' | 'en') {
     this._lang.set(l);
-    document.documentElement.lang = l;
+    this.document.documentElement.lang = l;
   }
 
   t(key: string): string {
