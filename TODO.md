@@ -86,6 +86,6 @@ Tarjetas de propiedades usan emojis como imagen (`properties.component.html`).
 
 - [ ] Pendiente
 
-## Paso 14 — Preconnect a Google Fonts
+## Paso 14 — Preconnect a Google Fonts ✅
 
-- [ ] Pendiente — agregar `<link rel="preconnect">` en `index.html`.
+- [x] Hecho — agregados `<link rel="preconnect" href="https://fonts.googleapis.com">` y `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>` antes del `<link>` de la hoja de estilos de fonts en `src/index.html`. `ng build` sin errores.
